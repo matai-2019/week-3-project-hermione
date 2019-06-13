@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "knex": "knex",
-    "dev": "nodemon index",
-    "start": "node index",
-    "test": "jest"
+    "dev": "nodemon .",
+    "start": "node .",
+    "test": "jest --watchAll"
   },
   "repository": {
     "type": "git",
