@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href= rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <title>Katas</title>
+  </head>
+    <h1>Katas</h1>
+  <body>
+    <div class="left">
+    <ul>
+      {{#each katas}} {{!Check proper data}}
+      <li>
+        <a href="/student/:id/:assId">{{name}}</a>
+      </li>
+      {{/each}}
+    </ul>
+    </div>
+      <div class="right">
+        <p>&#9745; Completed; &#10060; Not Completed; &#10071; Important! {{status}}</p> {{!Update to be dynamic and pulled from database}}
+      </div>
+  </body>
+</html>

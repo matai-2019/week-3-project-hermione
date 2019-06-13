@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href= rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <title>Kata</title>
+  </head>
+  <body>
+     <h1>Kata {{name}}</h1> {{!Make sure individual Kata names appear}}
+    <div class="right">
+      <p>&#9745; Completed; &#10060; Not Completed; &#10071; Important! {{status}}</p> {{!Update to be dynamic and pulled from database}}
+    </div>
+      <button class="button">Edit</button>
+      <textarea cols="50" rows="5">Notes</textarea>
+       {{!add status bar for questions}}
+       <a href="https://matai-2019-handbook.herokuapp.com/learning-objectives/">Learning Objectives</a>
+  </body>
+</html>
