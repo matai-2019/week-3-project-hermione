@@ -8,13 +8,17 @@
   </head>
   <body>
      <h1>Kata {{name}}</h1> {{!Make sure individual Kata names appear}}
-    <div class="right">
+    <div style="font-size: 0px">
       <p>&#9745; Completed; &#10060; Not Completed; &#10071; Important! {{status}}</p> {{!Update to be dynamic and pulled from database}}
     </div>
-      <button class="button">Edit</button>
+    <div>
+      <a class="lolink" href="https://matai-2019-handbook.herokuapp.com/learning-objectives/" target="_blank">Learning Objectives</a>
+    </div>
+    <br>
+    <br>
+      <button class="editbutton">Submit</button>
 
-      <textarea cols="50" rows="5">Notes</textarea>
+      <input class="editinput" cols="50" rows="5"></input>
 
-      <a href="https://matai-2019-handbook.herokuapp.com/learning-objectives/" target="_blank">Learning Objectives</a>
   </body>
 </html>

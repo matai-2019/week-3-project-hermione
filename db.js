@@ -24,7 +24,7 @@ function getUserByName (name, db = connection) {
 }
 function getUserAsses (studentId, db = connection) {
   return db('kata')
-    .select('kata.name', 'kata.id', 'kata.studentId')
+    .select('kata.name', 'kata.id', 'kata.studentId', 'kata.status')
     .where('kata.studentId', studentId)
 }
 
