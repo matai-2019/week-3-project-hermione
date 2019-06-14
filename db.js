@@ -29,17 +29,7 @@ function getUserAsses (studentId, db = connection) {
 }
 
 function getAss (studentId, assId, db = connection) {
-  // const asses = getUserAsses(studentId)
-  // let assesment = ''
-
-  // console.log(asses)
-
-  // asses.find(ass => {
-  //   if (ass.id === assId) {
-  //     assesment = ass
-  //   }
-  // })
-
+  return db()
   // return db('katas')
   //   .join('students', 'katas.student_id', `students.id`)
   //   .select('katas.status')

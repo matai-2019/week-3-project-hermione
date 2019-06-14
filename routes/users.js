@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
 })
 
 router.get('/login', (req, res) => {
-  res.render('login.hbs')
+  res.render('login')
 })
 
 router.post('/login', (req, res) => {
