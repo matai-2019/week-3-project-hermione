@@ -9,10 +9,9 @@
   <body>
      <h1>{{ass.name}}</h1> {{!Make sure individual Kata names appear}}
     {{#if ass.status}}
-    <h2 style="color: rgba(37, 192, 37, 0.644); margin-bottom: 50px">Completed</h2>
-    {{/if}}
-    {{#if ass.status === '0'}}
-    <h2 style="color: rgba(37, 192, 37, 0.644); margin-bottom: 50px">Completed</h2>
+    <h2 style="color: green; margin-bottom: 50px">Completed {{ass.status}}</h2>
+    {{else}}
+    <h2 style="color: red; margin-bottom: 50px">Incompleted</h2>
     {{/if}}
 
   <form action="/students/{{studentId}}/{{ass.id}}" method="post">
