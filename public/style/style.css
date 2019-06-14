@@ -1,0 +1,38 @@
+body {
+  text-align: center;
+  background-color: white;
+  color: black;
+  font-family: 'Lato', sans-serif;
+}
+
+h1 {
+  font-family: 'Fresca', sans-serif;
+  font-size: 100px;
+  margin-bottom: 30px
+}
+
+.logincontainer {
+  position: relative;
+  top: 200px;
+  display: block
+}
+
+.login-name {
+  height: 50px;
+  width: 350px;
+  font-size: 25px;
+  display: block;
+  position: relative;
+  left: 470px;
+  border-radius: 5%;
+}
+
+.loginbutton {
+  height: 30px
+}
+
+.loginquestion {
+  font-family: 'Lato', sans-serif;
+  font-size: 35px
+}
+

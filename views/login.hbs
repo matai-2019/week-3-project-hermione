@@ -1,20 +1,17 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="./styles/style.css">
-    <title>Track My Assessments</title>
-  </head>
+{{!-- 
+    <link href="https://fonts.googleapis.com/css?family=Fresca|Lato&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/style.css"> --}}
+    <div class="logincontainer">
     <h1>Track My Ass</h1>
-  <body>
-    <p>Who are you?</p>
+  <p class="loginquestion">Who are you?</p>
+    <br>
     <form action="/login" method="POST">
       <div>
-      <input type="text" name="name" id="login-name" placeholder="Name:">
-      <button class="button"><a href="/students/{{id}}"></a>Enter</button> {{!Change student link to '{{ }}
+      <input type="text" name="name" class="login-name">
+      <br>
+      <br>
+      <button class="loginbutton"><a href="/student/:studentId"></a>Enter</button> {{!Change student link to '{{ }}
       </div>
     </form>
-  </body>
-</html>
+    </div>
  
