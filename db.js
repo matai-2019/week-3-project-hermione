@@ -8,7 +8,8 @@ module.exports = {
   joinDetails,
   getUserByName,
   getUserAsses,
-  getAss
+  getAss,
+  updateAss
 }
 
 function getUsers (db = connection) {
@@ -31,7 +32,7 @@ function getUserAsses (studentId, db = connection) {
 function getAss (assId, db = connection) {
   return db('kata')
     .join('users', 'kata.studentID', `users.id`)
-    .select('kata.status', 'kata.name')
+    .select('kata.status', 'kata.name', 'kata.id')
     .where('kata.id', assId)
     .first()
 }
@@ -39,9 +40,11 @@ function getAss (assId, db = connection) {
 function updateAss (status, assId, db = connection) {
   return db('kata')
     .join('users', 'kata.studentID', `users.id`)
-    .select('kata.status', 'kata.name')
+    .select('kata.status')
     .where('kata.id', assId)
-    .first()
+    .update({
+      status: status
+    })
 }
 
 function joinDetails (kataID, userID, db = connection) {
