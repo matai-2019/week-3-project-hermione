@@ -21,9 +21,9 @@ router.post('/login', (req, res) => {
     })
 })
 router.get('/students/:studentId/:assId', (req, res) => {
-  const studentId = req.params.studentId
+  // const studentId = req.params.studentId
   const assId = req.params.assId
-  db.getAss(studentId, assId)
+  db.getAss(assId)
     .then(ass => {
       res.render('kata', ass)
     })

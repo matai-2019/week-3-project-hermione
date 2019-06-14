@@ -28,7 +28,7 @@ function getUserAsses (studentId, db = connection) {
     .where('kata.studentId', studentId)
 }
 
-function getAss (studentId, assId, db = connection) {
+function getAss (assId, db = connection) {
   return db('kata')
     .join('users', 'kata.studentID', `users.id`)
     .select('kata.status', 'kata.name')
@@ -37,12 +37,11 @@ function getAss (studentId, assId, db = connection) {
 }
 
 function updateAss (status, assId, db = connection) {
-  // return db('katas')
-  //   .join('students', 'katas.student_id', 'students.id')
-  //   .where('katas.id', assId)
-  //   .update({
-  //     status: status
-  //   })
+  return db('kata')
+    .join('users', 'kata.studentID', `users.id`)
+    .select('kata.status', 'kata.name')
+    .where('kata.id', assId)
+    .first()
 }
 
 function joinDetails (kataID, userID, db = connection) {
