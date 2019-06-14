@@ -10,9 +10,9 @@
     <h1>Katas</h1>
     <div class="left">
     <ul>
-      {{#each katas}} {{!Check proper data}}
+      {{#each asses}} {{!Check proper data}}
       <li>
-        <a href="/student/:id/:assId">{{name}}</a>
+        <a href="/students/{{studentID}}/{{id}}">{{name}}</a>
       </li>
       {{/each}}
     </ul>
