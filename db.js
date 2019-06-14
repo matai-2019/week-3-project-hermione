@@ -29,12 +29,11 @@ function getUserAsses (studentId, db = connection) {
 }
 
 function getAss (studentId, assId, db = connection) {
-  // return db()
-  // return db('katas')
-  //   .join('students', 'katas.student_id', `students.id`)
-  //   .select('katas.status')
-  //   .where('katas.id', assId)
-  //   .first()
+  return db('kata')
+    .join('users', 'kata.studentID', `users.id`)
+    .select('kata.status', 'kata.name')
+    .where('kata.id', assId)
+    .first()
 }
 
 function updateAss (status, assId, db = connection) {

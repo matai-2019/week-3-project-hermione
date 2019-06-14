@@ -23,15 +23,13 @@ router.post('/login', (req, res) => {
 router.get('/students/:studentId/:assId', (req, res) => {
   const studentId = req.params.studentId
   const assId = req.params.assId
-  // res.send('hi')
-  // db.getAss(studentId, assId)
-  //   .then(ass => {
-  //     // res.render('ass.hbs', ass)
-  //     res.send('hi')
-  //   })
-  //   .catch(err => {
-  //     res.status(500).send('DATABASE ERROR: ' + err.message)
-  //   })
+  db.getAss(studentId, assId)
+    .then(ass => {
+      res.render('kata', ass)
+    })
+    .catch(err => {
+      res.status(500).send('DATABASE ERROR: ' + err.message)
+    })
 })
 
 // router.put('/students/:studentId/:assId', (req, res) => {
