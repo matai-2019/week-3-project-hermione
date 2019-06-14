@@ -28,9 +28,9 @@ router.post('/login', (req, res) => {
 router.get('/students/:studentId', (req, res) => {
   const id = req.params.studentId
   // res.send(`<h1>${id}</h1>`)
-  db.getUser(id)
-    .then(user => {
-      res.render('profile.hbs', user.assesments)
+  db.getUserAsses(id)
+    .then(asses => {
+      res.render('profile.hbs', { asses })
     })
     .catch(err => {
       res.status(500).send('DATABASE ERROR: ' + err.message)
