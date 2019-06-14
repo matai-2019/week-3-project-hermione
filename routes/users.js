@@ -23,25 +23,28 @@ router.post('/login', (req, res) => {
 router.get('/students/:studentId/:assId', (req, res) => {
   // const studentId = req.params.studentId
   const assId = req.params.assId
+  const studentId = req.params.studentId
   db.getAss(assId)
     .then(ass => {
-      res.render('kata', ass)
+      res.render('kata', { ass, studentId })
     })
     .catch(err => {
       res.status(500).send('DATABASE ERROR: ' + err.message)
     })
 })
 
-// router.put('/students/:studentId/:assId', (req, res) => {
-//   const status = req.body.status
-//   const studentId = req.params.studentId
-//   const assId = req.params.assId
+router.put('/students/:studentId/:assId', (req, res) => {
+  const status = req.body.status
+  const studentId = req.params.studentId
+  const assId = req.params.assId
 
-//   db.updateAss(status, assId)
-//     .then(ass => {
-//       res.redirect(`/students/${studentId}/${assId}`)
-//     })
-// })
+  // console.log(status)
+
+  db.updateAss(status, assId)
+    .then(ass => {
+      res.redirect(`/students/${studentId}/${assId}`)
+    })
+})
 
 router.get('/students/:studentId', (req, res) => {
   const id = req.params.studentId

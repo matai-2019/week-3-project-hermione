@@ -19,9 +19,13 @@
       {{/each}}
     </a>
     </div>
-    <div>
+    <div class="completed">
       {{#each asses}}
-        <p>{{status}}</p>
+      {{#if status}}
+        <p>Completed</p>
+        {{else}}
+        <p>not completed</p>
+        {{/if}}
       {{/each}}
     </div>
       {{!-- <div class="right">

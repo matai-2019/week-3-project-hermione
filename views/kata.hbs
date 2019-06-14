@@ -7,18 +7,23 @@
     <title>Kata</title>
   </head>
   <body>
-     <h1>Kata {{name}}</h1> {{!Make sure individual Kata names appear}}
-    <div style="font-size: 0px">
-      <p>&#9745; Completed; &#10060; Not Completed; &#10071; Important! {{status}}</p> {{!Update to be dynamic and pulled from database}}
-    </div>
-    <div>
-      <a class="lolink" href="https://matai-2019-handbook.herokuapp.com/learning-objectives/" target="_blank">Learning Objectives</a>
-    </div>
-    <br>
-    <br>
-      <button class="editbutton">Submit</button>
+     <h1>{{ass.name}}</h1> {{!Make sure individual Kata names appear}}
+    {{#if ass.status}}
+    <h2 style="color: rgba(37, 192, 37, 0.644); margin-bottom: 50px">Completed</h2>
+    {{/if}}
+    {{#if ass.status === '0'}}
+    <h2 style="color: rgba(37, 192, 37, 0.644); margin-bottom: 50px">Completed</h2>
+    {{/if}}
 
-      <input class="editinput" cols="50" rows="5"></input>
-
+  <form action="/students/{{studentId}}/{{ass.id}}" method="post">
+      <label for="status">status</label>
+    <select id="country" name="status">
+      <option value="completed">comlpeted</option>
+      <option value="notCompleted">not completed</option>
+    </select>
+    <button type="submit" class="button">submit</button>
+  </form>
+  <br >
+      <a href="https://matai-2019-handbook.herokuapp.com/learning-objectives/" target="_blank">Learning Objectives</a>
   </body>
 </html>
