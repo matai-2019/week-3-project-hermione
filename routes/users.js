@@ -41,7 +41,7 @@ router.get('/students/:studentId/:assId', (req, res) => {
   const studentId = req.params.studentId
   const assId = req.params.assId
   // res.send(`<h1>${id}</h1>`)
-  db.getAss(studentId, assId)
+  db.getAss(1assId)
     .then(ass => {
       res.render('ass.hbs', ass)
     })
@@ -55,7 +55,7 @@ router.put('/students/:studentId/:assId', (req, res) => {
   const studentId = req.params.studentId
   const assId = req.params.assId
 
-  db.updateAss(status)
+  db.updateAss(status, assId)
     .then(ass => {
       res.redirect(`/students/${studentId}/${assId}`)
     })

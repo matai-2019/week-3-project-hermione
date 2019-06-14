@@ -7,7 +7,7 @@ module.exports = {
   getUsers: getUsers,
   getUserByName,
   getAss,
-  getAsses,
+  getUserAsses,
   updateAss
 }
 
@@ -22,15 +22,25 @@ function getUser (id, db = connection) {
 function getUserByName (name, db = connection) {
   return db('students').where('name', name).first()
 }
-function getAsses (studentId, db = connection) {
+function getUserAsses (studentId, db = connection) {
   return db('katas')
+    .select()
     .where('student_id', studentId)
 }
 
-function getAss (studentId, assId) {
-  
+function getAss (assId, db = connection) {
+  return db('katas')
+    .join('students', 'katas.student_id', 'students.id')
+    .select('katas.status')
+    .where('katas.id', assId)
+    .first()
 }
 
-function updateAss (studentId, assId) {
-  // return db('students')
+function updateAss (status, assId, db = connection) {
+  return db('katas')
+    .join('students', 'katas.student_id', 'students.id')
+    .where('katas.id', assId)
+    .update({
+      status: status
+    })
 }
