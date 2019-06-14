@@ -5,10 +5,10 @@ const connection = require('knex')(config)
 module.exports = {
   getUser: getUser,
   getUsers: getUsers,
+  joinDetails,
   getUserByName,
-  getAss,
   getUserAsses,
-  updateAss
+  getAss
 }
 
 function getUsers (db = connection) {
@@ -54,4 +54,13 @@ function updateAss (status, assId, db = connection) {
   //   .update({
   //     status: status
   //   })
+}
+
+function joinDetails (kataID, userID, db = connection) {
+  return db('status')
+    .select()
+    .join('users', 'status.StudentID', '=', 'users.id')
+    .join('katas', 'status.KataID', '=', 'kata.id')
+    .where('kata.id', kataID)
+    .where('users.id', userID)
 }
