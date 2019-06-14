@@ -23,9 +23,10 @@ router.post('/login', (req, res) => {
 router.get('/students/:studentId/:assId', (req, res) => {
   // const studentId = req.params.studentId
   const assId = req.params.assId
+  const studentId = req.params.studentId
   db.getAss(assId)
     .then(ass => {
-      res.render('kata', ass)
+      res.render('kata', { ass, studentId })
     })
     .catch(err => {
       res.status(500).send('DATABASE ERROR: ' + err.message)

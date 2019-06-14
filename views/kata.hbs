@@ -7,12 +7,15 @@
     <title>Kata</title>
   </head>
   <body>
-     <h1>Kata {{name}}</h1> {{!Make sure individual Kata names appear}}
-    {{#if status}}
+     <h1>{{ass.name}}</h1> {{!Make sure individual Kata names appear}}
+    {{#if ass.status}}
+    <h2 style="color: rgba(37, 192, 37, 0.644); margin-bottom: 50px">Completed</h2>
+    {{/if}}
+    {{#if ass.status === '0'}}
     <h2 style="color: rgba(37, 192, 37, 0.644); margin-bottom: 50px">Completed</h2>
     {{/if}}
 
-  <form action="/students/{{}}/{{id}}" method="post">
+  <form action="/students/{{studentId}}/{{ass.id}}" method="post">
       <label for="status">status</label>
     <select id="country" name="status">
       <option value="completed">comlpeted</option>
