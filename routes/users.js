@@ -41,7 +41,7 @@ router.get('/students/:studentId/:assId', (req, res) => {
   const studentId = req.params.studentId
   const assId = req.params.assId
   // res.send(`<h1>${id}</h1>`)
-  db.getAss(1assId)
+  db.getAss(studentId, assId)
     .then(ass => {
       res.render('ass.hbs', ass)
     })
