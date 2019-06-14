@@ -4,7 +4,12 @@ const connection = require('knex')(config)
 
 module.exports = {
   getUser: getUser,
-  getUsers: getUsers
+  getUsers: getUsers,
+  joinDetails,
+  getUserByName,
+  getUserAsses,
+  getAss,
+  updateAss
 }
 
 function getUsers (db = connection) {
@@ -13,4 +18,40 @@ function getUsers (db = connection) {
 
 function getUser (id, db = connection) {
   return db('users').where('id', id).first()
+}
+
+function getUserByName (name, db = connection) {
+  return db('users').where('name', name).first()
+}
+function getUserAsses (studentId, db = connection) {
+  return db('kata')
+    .select('kata.name', 'kata.id', 'kata.studentId', 'kata.status')
+    .where('kata.studentId', studentId)
+}
+
+function getAss (assId, db = connection) {
+  return db('kata')
+    .join('users', 'kata.studentID', `users.id`)
+    .select('kata.status', 'kata.name', 'kata.id')
+    .where('kata.id', assId)
+    .first()
+}
+
+function updateAss (status, assId, db = connection) {
+  return db('kata')
+    .join('users', 'kata.studentID', `users.id`)
+    .select('kata.status')
+    .where('kata.id', assId)
+    .update({
+      status: status
+    })
+}
+
+function joinDetails (kataID, userID, db = connection) {
+  return db('status')
+    .select()
+    .join('users', 'status.StudentID', '=', 'users.id')
+    .join('katas', 'status.KataID', '=', 'kata.id')
+    .where('kata.id', kataID)
+    .where('users.id', userID)
 }

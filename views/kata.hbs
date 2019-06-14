@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Fresca|Lato&display=swap" rel="stylesheet">     
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <title>Kata</title>
+  </head>
+  <body>
+     <h1>{{ass.name}}</h1> {{!Make sure individual Kata names appear}}
+    {{#if ass.status}}
+    <h2 style="color: green; margin-bottom: 50px">Completed {{ass.status}}</h2>
+    {{else}}
+    <h2 style="color: red; margin-bottom: 50px">Incompleted</h2>
+    {{/if}}
+
+  <form action="/students/{{studentId}}/{{ass.id}}" method="post">
+      <label for="status">status</label>
+    <select id="country" name="status">
+      <option value="completed">comlpeted</option>
+      <option value="notCompleted">not completed</option>
+    </select>
+    <button type="submit" class="button">submit</button>
+  </form>
+  <br >
+      <a href="https://matai-2019-handbook.herokuapp.com/learning-objectives/" target="_blank">Learning Objectives</a>
+  </body>
+</html>

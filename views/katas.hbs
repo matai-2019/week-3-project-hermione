@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Fresca|Lato&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <title>Katas</title>
+  </head>
+  <body>
+    <h1>Your Katas</h1>
+    <br>
+    <br>
+    <div class="left">
+    <ul>
+      {{#each asses}} {{!Check proper data}}
+      <div class="katalist">
+        <a href="/students/{{studentID}}/{{id}}">{{name}}</a>
+        </div>
+      {{/each}}
+    </a>
+    </div>
+    <div class="completed">
+      {{#each asses}}
+      {{#if status}}
+        <p>Completed</p>
+        {{else}}
+        <p>not completed</p>
+        {{/if}}
+      {{/each}}
+    </div>
+      {{!-- <div class="right">
+        <p>&#9745; Completed; &#10060; Not Completed; &#10071; Important! {{status}}</p> {{!Update to be dynamic and pulled from database}}
+      </div> --}}
+  </body>
+</html>
