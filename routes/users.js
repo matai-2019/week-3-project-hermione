@@ -50,7 +50,7 @@ router.get('/students/:studentId/:assId', (req, res) => {
     })
 })
 
-router.post('/students/:studentId/:assId', (req, res) => {
+router.put('/students/:studentId/:assId', (req, res) => {
   const status = req.body.status
   const studentId = req.params.studentId
   const assId = req.params.assId
