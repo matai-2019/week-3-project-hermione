@@ -1,6 +1,6 @@
 body {
   text-align: center;
-  background-color: white;
+  background-color: bisque;
   color: black;
   font-family: 'Lato', sans-serif;
 }
@@ -24,11 +24,15 @@ h1 {
   display: block;
   position: relative;
   left: 470px;
-  border-radius: 5%;
+  border-radius: 2px;
+  /* box-shadow: -2px -4px inset #888888; */
 }
 
 .loginbutton {
-  height: 30px
+  height: 30px;
+  font-family: 'Lato', sans-serif;
+  height: 30px;
+  width: 80px
 }
 
 .loginquestion {
@@ -36,41 +40,59 @@ h1 {
   font-size: 35px
 }
 
-.button {
-  background-color: #4CAF50;
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
+.left {
+  position: relative;
+  left: 80px
+}
+
+.katalist {
+  display: block;
+  margin: 30px;
+  text-align: left;
+  font-family: 'Lato', sans-serif;
+  font-size: 30px;
+  color: black;
   text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
 }
 
-input[type=text], select {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
+.completed {
+  display: block;
+  margin: 30px;
+  font-family: 'Lato', sans-serif;
+  font-size: 30px;
+  color: black;
+  text-decoration: none;
+  position: relative;
+  left: 200px;
+  bottom: 1060px
 }
 
-input[type=submit] {
-  width: 100%;
-  background-color: #4CAF50;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+a {
+  text-decoration: none;
+  color: black
 }
 
-input[type=submit]:hover {
-  background-color: #45a049;
+.editbutton {
+  display: flex;
+  position: relative;
+  top: 250px;
+  left: 620px;
+  height: 40px;
+  width: 80px;
+  font-family: 'Lato', sans-serif;
+  font-size: 15px;
+  justify-content: center
 }
 
+.editinput {
+  height: 150px;
+  width: 600px;
+  font-size: 20px;
+  text-align: left;
+  border-radius: 5px
+}
+
+.lolink {
+  display: block;
+  font-size: 25px;
+}

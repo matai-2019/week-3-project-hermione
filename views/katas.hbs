@@ -7,18 +7,29 @@
     <title>Katas</title>
   </head>
   <body>
-    <h1>Katas</h1>
+    <h1>Your Katas</h1>
+    <br>
+    <br>
     <div class="left">
     <ul>
       {{#each asses}} {{!Check proper data}}
-      <li>
+      <div class="katalist">
         <a href="/students/{{studentID}}/{{id}}">{{name}}</a>
-      </li>
+        </div>
       {{/each}}
-    </ul>
+    </a>
     </div>
-      <div class="right">
+    <div class="completed">
+      {{#each asses}}
+      {{#if status}}
+        <p>Completed</p>
+        {{else}}
+        <p>not completed</p>
+        {{/if}}
+      {{/each}}
+    </div>
+      {{!-- <div class="right">
         <p>&#9745; Completed; &#10060; Not Completed; &#10071; Important! {{status}}</p> {{!Update to be dynamic and pulled from database}}
-      </div>
+      </div> --}}
   </body>
 </html>

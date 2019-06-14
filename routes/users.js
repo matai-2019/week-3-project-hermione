@@ -51,6 +51,7 @@ router.get('/students/:studentId', (req, res) => {
   // res.send(`<h1>${id}</h1>`)
   db.getUserAsses(id)
     .then(asses => {
+      console.log(asses)
       res.render('katas', { asses })
       // res.send(asses)
     })
