@@ -12,24 +12,24 @@ module.exports = {
 }
 
 function getUsers (db = connection) {
-  return db('students').select()
+  return db('users').select()
 }
 
 function getUser (id, db = connection) {
-  return db('students').where('id', id).first()
+  return db('users').where('id', id).first()
 }
 
 function getUserByName (name, db = connection) {
-  return db('students').where('name', name).first()
+  return db('users').where('name', name).first()
 }
 function getUserAsses (studentId, db = connection) {
-  return db('katas')
-    .select()
-    .where('student_id', studentId)
+  return db('kata')
+    .select('kata.name', 'kata.id', 'kata.studentId')
+    .where('kata.studentId', studentId)
 }
 
 function getAss (studentId, assId, db = connection) {
-  return db()
+  // return db()
   // return db('katas')
   //   .join('students', 'katas.student_id', `students.id`)
   //   .select('katas.status')
